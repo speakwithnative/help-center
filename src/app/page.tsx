@@ -1,66 +1,53 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+      <section>
+        <div className="p-5 mb-4 bg-light rounded-3">
+          <h1 className="display-6 fw-bold">How can we help?</h1>
+          <p className="lead">
+            Learn how to use Speak with Native on web and mobile.
           </p>
+
+          <Link href="/guides" className="btn btn-primary">
+            View all guides
+          </Link>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="row g-4">
+          <div className="col-md-4">
+            <Link href="/guides" className="card text-decoration-none h-100">
+              <div className="card-body">
+                <h2 className="h5">Getting Started</h2>
+                <p className="text-muted">
+                  Create your profile and start using the platform.
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          <div className="col-md-4">
+            <Link href="/web" className="card text-decoration-none h-100">
+              <div className="card-body">
+                <h2 className="h5">Web Platform</h2>
+                <p className="text-muted">
+                  Learn how to use Speak with Native on web.
+                </p>
+              </div>
+            </Link>
+          </div>
+
+          <div className="col-md-4">
+            <Link href="/mobile" className="card text-decoration-none h-100">
+              <div className="card-body">
+                <h2 className="h5">Mobile App</h2>
+                <p className="text-muted">
+                  Learn how to use the mobile application.
+                </p>
+              </div>
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
   );
 }
