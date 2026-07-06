@@ -1,5 +1,5 @@
 import { guides } from "@/data/guides";
-import type { Platform } from "@/types/guide";
+import type { GuideCategory, Platform } from "@/types/guide";
 import { NextRequest, NextResponse } from "next/server";
 
 export function GET(request: NextRequest) {
@@ -7,6 +7,7 @@ export function GET(request: NextRequest) {
 
     const search = searchParams.get("search")?.toLowerCase() ?? "";
     const platform = searchParams.get("platform") as Platform | "all" | null;
+    const category = searchParams.get("category") as GuideCategory | "all" | null;
 
     let filteredGuides = guides;
 
@@ -16,12 +17,19 @@ export function GET(request: NextRequest) {
         );
     }
 
+    if (category && category !== "all") {
+        filteredGuides = filteredGuides.filter(
+            (guide) => guide.category === category
+        );
+    }
+
     if (search) {
         filteredGuides = filteredGuides.filter((guide) => {
             return (
                 guide.title.toLowerCase().includes(search) ||
                 guide.description.toLowerCase().includes(search) ||
-                guide.category.toLowerCase().includes(search)
+                guide.category.toLowerCase().includes(search) ||
+                guide.platform.toLowerCase().includes(search)
             );
         });
     }

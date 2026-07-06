@@ -1,13 +1,14 @@
 {
   "app": {
-    "name": "Speak with Native Hilfe-Center"
+    "name": "Speak with Native"
   },
   "nav": {
     "home": "Startseite",
     "guides": "Alle Anleitungen",
     "web": "Web",
     "mobile": "Mobile App",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "about": "Über uns"
   },
   "home": {
     "title": "Wie können wir helfen?",
@@ -21,6 +22,13 @@
     "web": "Web",
     "mobile": "Mobile App",
     "both": "Web und Mobile App",
+    "allCategories": "Alle Kategorien",
+    "gettingStarted": "Erste Schritte",
+    "webPlatform": "Web-Plattform",
+    "mobileApp": "Mobile App",
+    "messaging": "Nachrichten",
+    "premium": "Premium",
+    "troubleshooting": "Fehlerbehebung",
     "empty": "Keine Anleitungen gefunden.",
     "readGuide": "Anleitung lesen",
     "minRead": "Min. Lesezeit"

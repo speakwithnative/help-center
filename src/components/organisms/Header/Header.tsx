@@ -27,6 +27,10 @@ export function Header() {
                         {t("nav.mobile")}
                     </Link>
 
+                    <Link className="nav-link" href="/about-us">
+                        {t("nav.about")}
+                    </Link>
+
                     <Link className="nav-link" href="/contact">
                         {t("nav.contact")}
                     </Link>

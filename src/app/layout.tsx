@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 import { MainLayout } from "@/components/templates/MainLayout/MainLayout";
 
 export const metadata: Metadata = {
-  title: "Speak with Native Help Center",
+  title: "Speak with Native",
   description: "Learn how to use Speak with Native on web and mobile.",
 };
 
