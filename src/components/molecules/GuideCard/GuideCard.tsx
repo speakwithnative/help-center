@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import type { Guide } from "@/types/guide";
+import styles from "./GuideCard.module.scss";
 
 type GuideCardProps = {
     guide: Guide;
@@ -12,22 +13,25 @@ export function GuideCard({ guide }: GuideCardProps) {
     const { t } = useTranslation();
 
     return (
-        <article className="card h-100">
-            <div className="card-body">
-                <div className="d-flex gap-2 mb-2">
-                    <span className="badge text-bg-primary">{guide.platform}</span>
-                    <span className="badge text-bg-secondary">{guide.category}</span>
+        <article className={styles.card}>
+            <div className={styles.cardBody}>
+                <div className={styles.badgeGroup}>
+                    <span className={styles.platformBadge}>{guide.platform}</span>
+                    <span className={styles.categoryBadge}>{guide.category}</span>
                 </div>
 
-                <h2 className="h5 card-title">{guide.title}</h2>
+                <h2 className={styles.title}>{guide.title}</h2>
 
-                <p className="card-text text-muted">{guide.description}</p>
+                <p className={styles.description}>{guide.description}</p>
 
-                <p className="small text-muted">
+                <p className={styles.meta}>
                     {guide.readingTime} {t("guides.minRead")}
                 </p>
 
-                <Link className="btn btn-outline-primary btn-sm" href={`/guides/${guide.slug}`}>
+                <Link
+                    className={`btn btn-outline-primary btn-sm ${styles.action}`}
+                    href={`/guides/${guide.slug}`}
+                >
                     {t("guides.readGuide")}
                 </Link>
             </div>

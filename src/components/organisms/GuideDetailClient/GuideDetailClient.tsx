@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getGuideBySlug } from "@/lib/api/guidesApi";
 import {useEffect, useState} from "react";
 import {Guide} from "@/types/guide";
+import {notFound} from "next/navigation";
 
 type GuideDetailClientProps = {
     slug: string;
@@ -48,18 +49,7 @@ export function GuideDetailClient({ slug }: GuideDetailClientProps) {
         return <p>Loading guide...</p>;
     }
 
-    if (isError || !guide) {
-        return (
-            <section className="text-center py-5">
-                <h1>Guide not found</h1>
-                <p className="text-muted">This help guide could not be loaded.</p>
-
-                <Link href="/guides" className="btn btn-primary">
-                    Back to guides
-                </Link>
-            </section>
-        );
-    }
+    if (isError || !guide) notFound();
 
     return (
         <article className="mx-auto" style={{ maxWidth: 800 }}>
